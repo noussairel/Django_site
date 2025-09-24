@@ -10,7 +10,13 @@
 <body>
 <h1>test site</h1>
 <p> this is from django</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cum dolore dolores expedita fugit harum id, illo incidunt nemo nisi obcaecati quae quaerat quos rem tempore temporibus velit vitae voluptatibus.</p>
+{%for post in posts%}
+    <article>
+        <time>published : {{ post.published_date }}</time>
+        <h2><a href=""> {{ post.title }}</a></h2>
+        <p>{{ post.content }}</p>
+    </article>
+{%endfor%}
 </body>
 
 </html>
